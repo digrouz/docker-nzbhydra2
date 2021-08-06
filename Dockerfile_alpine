@@ -8,8 +8,8 @@ ENV LANG='en_US.UTF-8' \
     LANGUAGE='en_US.UTF-8' \
     TERM='xterm'  \
     APPUSER='nzbhydra2' \
-    APPUID='10000' \
-    APPGID='10000' \
+    APPUID='10033' \
+    APPGID='10033' \
     NZBHYDRA2_VERSION="${NZBHYDRA2_VERSION}"
 
 # Copy config files
