@@ -1,0 +1,65 @@
+FROM alpine:3.14
+LABEL maintainer "DI GREGORIO Nicolas <nicolas.digregorio@gmail.com>"
+
+ARG NZBHYDRA2_VERSION='3.15.1'
+
+### Environment variables
+ENV LANG='en_US.UTF-8' \
+    LANGUAGE='en_US.UTF-8' \
+    TERM='xterm'  \
+    APPUSER='nzbhydra2' \
+    APPUID='10000' \
+    APPGID='10000' \
+    NZBHYDRA2_VERSION="${NZBHYDRA2_VERSION}"
+
+# Copy config files
+COPY root/ /
+
+### Install Application
+RUN set -x && \
+    chmod 1777 /tmp && \
+    . /usr/local/bin/docker-entrypoint-functions.sh && \
+    MYUSER=${APPUSER} && \
+    MYUID=${APPUID} && \
+    MYGID=${APPGID} && \
+    ConfigureUser && \
+    apk add --no-cache --virtual=build-deps \
+      unzip \
+    && \
+    apk add --no-cache --virtual=run-deps \
+      bash \
+      curl \
+      ca-certificates \
+      openjdk11-jre-headless \
+      python3 \
+      su-exec \
+      tzdata \
+    && \
+    curl -sL https://github.com/theotherp/nzbhydra2/releases/download/v${NZBHYDRA2_VERSION}/nzbhydra2-${NZBHYDRA2_VERSION}-linux.zip -o /tmp/nzbhydra2.zip && \
+    cd /tmp && \
+    unzip /tmp/nzbhydra2.zip -d /opt/nzbhydra2 && \
+    apk del --no-cache --purge \
+      build-deps  \
+    && \
+    mkdir -p /docker-entrypoint.d && \
+    mkdir -p /config && \
+    rm -rf /opt/nzbhydra2/data && \
+    ln -snf /opt/nzbhydra2/data /config && \
+    chmod +x /usr/local/bin/docker-entrypoint.sh && \
+    ln -snf /usr/local/bin/docker-entrypoint.sh /docker-entrypoint.sh && \
+    rm -rf /tmp/* \
+           /var/cache/apk/*  \
+           /var/tmp/* 
+
+### Volume
+VOLUME ["/config"]
+
+### Expose ports
+EXPOSE 5076
+
+### Running User: not used, managed by docker-entrypoint.sh
+#USER nzbhydra2
+
+### Start NZBHYDRA2
+ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["nzbhydra2"]
