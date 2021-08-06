@@ -1,7 +1,7 @@
 
-[![auto-update-workflow](https://github.com/digrouz/docker-sickchill/actions/workflows/auto-update.yml/badge.svg)](https://github.com/digrouz/docker-sickchill/actions/workflows/auto-update.yml)
-[![dockerhub-workflow](https://github.com/digrouz/docker-sickchill/actions/workflows/dockerhub.yml/badge.svg)](https://github.com/digrouz/docker-sickchill/actions/workflows/dockerhub.yml)
-![Docker Pulls](https://img.shields.io/docker/pulls/digrouz/sickchill)
+[![auto-update-workflow](https://github.com/digrouz/docker-nzbhydra2/actions/workflows/auto-update.yml/badge.svg)](https://github.com/digrouz/docker-nzbhydra2/actions/workflows/auto-update.yml)
+[![dockerhub-workflow](https://github.com/digrouz/docker-nzbhydra2/actions/workflows/dockerhub.yml/badge.svg)](https://github.com/digrouz/docker-nzbhydra2/actions/workflows/dockerhub.yml)
+![Docker Pulls](https://img.shields.io/docker/pulls/digrouz/nzbhydra2)
 
 # docker-nzbhydra2
 Installs nzbhydra into a Linux container
