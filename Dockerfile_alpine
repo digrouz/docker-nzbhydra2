@@ -24,11 +24,11 @@ RUN set -x && \
     MYGID=${APPGID} && \
     ConfigureUser && \
     apk add --no-cache --virtual=build-deps \
+      curl \
       unzip \
     && \
     apk add --no-cache --virtual=run-deps \
       bash \
-      curl \
       ca-certificates \
       openjdk11-jre-headless \
       python3 \
