@@ -24,8 +24,8 @@ https://github.com/theotherp/nzbhydra2
     docker create --name=nzbhydra2  \
       -v /etc/localtime:/etc/localtime:ro \ 
       -v <path to config>:/config \
-      -e DOCKUID=<UID default:10000> \
-      -e DOCKGID=<GID default:10000> \
+      -e DOCKUID=<UID default:10033> \
+      -e DOCKGID=<GID default:10033> \
       -e DOCKUPGRADE=<0|1> \
       -p 8081:8081 digrouz/nzbhydra2:latest
 
@@ -35,11 +35,11 @@ When you start the `nzbhydra2` image, you can adjust the configuration of the `s
 
 ### `DOCKUID`
 
-This variable is not mandatory and specifies the user id that will be set to run the application. It has default value `10000`.
+This variable is not mandatory and specifies the user id that will be set to run the application. It has default value `10033`.
 
 ### `DOCKGID`
 
-This variable is not mandatory and specifies the group id that will be set to run the application. It has default value `10000`.
+This variable is not mandatory and specifies the group id that will be set to run the application. It has default value `10033`.
 
 ### `DOCKUPGRADE`
 
