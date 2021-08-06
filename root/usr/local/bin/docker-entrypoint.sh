@@ -16,7 +16,7 @@ if [ "$1" == 'nzbhydra2' ]; then
   chmod -R g+w /config /opt/nzbhydra2
   RunDropletEntrypoint
   DockLog "Starting app: ${1}"
-  exec su-exec "${MYUSER}" python3 /opt/nzbhydra2/nzbhydra2wrapperPy3.py --nobrowser --datafolder /config
+  exec su-exec "${MYUSER}" python3 /opt/nzbhydra2/nzbhydra2wrapperPy3.py
 else
   DockLog "Starting app: ${@}"
   exec "$@"
