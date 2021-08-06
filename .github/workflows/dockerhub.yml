@@ -41,3 +41,10 @@ jobs:
           file: Dockerfile_alpine
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/nzbhydra2:alpine
+      - 
+        name: Docker Hub Description
+        uses: peter-evans/dockerhub-description@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          repository: ${{ secrets.DOCKERHUB_USERNAME }}/nzbhydra2
