@@ -31,7 +31,7 @@ https://github.com/theotherp/nzbhydra2
 
 ## Environment Variables
 
-When you start the `nzbhydra2` image, you can adjust the configuration of the `sickchill` instance by passing one or more environment variables on the `docker run` command line.
+When you start the `nzbhydra2` image, you can adjust the configuration of the `nzbhydra2` instance by passing one or more environment variables on the `docker run` command line.
 
 ### `DOCKUID`
 
