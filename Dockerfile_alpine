@@ -44,7 +44,7 @@ RUN set -x && \
     mkdir -p /docker-entrypoint.d && \
     mkdir -p /config && \
     rm -rf /opt/nzbhydra2/data && \
-    ln -snf /opt/nzbhydra2/data /config && \
+    ln -snf /config /opt/nzbhydra2/data && \
     chmod +x /usr/local/bin/docker-entrypoint.sh && \
     ln -snf /usr/local/bin/docker-entrypoint.sh /docker-entrypoint.sh && \
     rm -rf /tmp/* \
