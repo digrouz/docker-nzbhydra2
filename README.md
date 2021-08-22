@@ -27,7 +27,7 @@ https://github.com/theotherp/nzbhydra2
       -e DOCKUID=<UID default:10033> \
       -e DOCKGID=<GID default:10033> \
       -e DOCKUPGRADE=<0|1> \
-      -p 8081:8081 digrouz/nzbhydra2:latest
+      -p 5076:5076 digrouz/nzbhydra2:latest
 
 ## Environment Variables
 
