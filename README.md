@@ -27,11 +27,11 @@ https://github.com/theotherp/nzbhydra2
       -e DOCKUID=<UID default:10033> \
       -e DOCKGID=<GID default:10033> \
       -e DOCKUPGRADE=<0|1> \
-      -p 8081:8081 digrouz/nzbhydra2:latest
+      -p 5076:5076 digrouz/nzbhydra2:latest
 
 ## Environment Variables
 
-When you start the `nzbhydra2` image, you can adjust the configuration of the `sickchill` instance by passing one or more environment variables on the `docker run` command line.
+When you start the `nzbhydra2` image, you can adjust the configuration of the `nzbhydra2` instance by passing one or more environment variables on the `docker run` command line.
 
 ### `DOCKUID`
 

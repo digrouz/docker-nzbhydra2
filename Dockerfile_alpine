@@ -1,7 +1,7 @@
 FROM alpine:3.14
 LABEL maintainer "DI GREGORIO Nicolas <nicolas.digregorio@gmail.com>"
 
-ARG NZBHYDRA2_VERSION='3.15.1'
+ARG NZBHYDRA2_VERSION='3.15.2'
 
 ### Environment variables
 ENV LANG='en_US.UTF-8' \
@@ -44,7 +44,7 @@ RUN set -x && \
     mkdir -p /docker-entrypoint.d && \
     mkdir -p /config && \
     rm -rf /opt/nzbhydra2/data && \
-    ln -snf /opt/nzbhydra2/data /config && \
+    ln -snf /config /opt/nzbhydra2/data && \
     chmod +x /usr/local/bin/docker-entrypoint.sh && \
     ln -snf /usr/local/bin/docker-entrypoint.sh /docker-entrypoint.sh && \
     rm -rf /tmp/* \
