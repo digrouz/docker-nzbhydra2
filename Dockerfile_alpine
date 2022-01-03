@@ -30,7 +30,7 @@ RUN set -x && \
     apk add --no-cache --virtual=run-deps \
       bash \
       ca-certificates \
-      openjdk11-jre-headless \
+      openjdk17-jre-headless \
       python3 \
       su-exec \
       tzdata \
