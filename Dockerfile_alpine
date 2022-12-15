@@ -1,7 +1,7 @@
 FROM alpine:3.17.0
 LABEL maintainer "DI GREGORIO Nicolas <nicolas.digregorio@gmail.com>"
 
-ARG NZBHYDRA2_VERSION='4.7.3'
+ARG NZBHYDRA2_VERSION='4.7.4'
 
 ### Environment variables
 ENV LANG='en_US.UTF-8' \
