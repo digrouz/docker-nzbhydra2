@@ -25,7 +25,7 @@ RUN set -x && \
       openjdk17-jre-headless \
       python3 \
     && \
-    curl -sL https://github.com/theotherp/nzbhydra2/releases/download/v${NZBHYDRA2_VERSION}/nzbhydra2-${NZBHYDRA2_VERSION}-${NZBHYDRA2_ARCH}-linux.zip -o /tmp/nzbhydra2.zip && \
+    curl -sL https://github.com/theotherp/nzbhydra2/releases/download/v${NZBHYDRA2_VERSION}/nzbhydra2-${NZBHYDRA2_VERSION}-${NZBHYDRA2_ARCH}.zip -o /tmp/nzbhydra2.zip && \
     cd /tmp && \
     unzip /tmp/nzbhydra2.zip -d /opt/nzbhydra2 && \
     apk del --no-cache --purge \
