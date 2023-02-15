@@ -2,12 +2,14 @@ FROM digrouz/alpine-s6:latest
 LABEL maintainer "DI GREGORIO Nicolas <nicolas.digregorio@gmail.com>"
 
 ARG NZBHYDRA2_VERSION='5.1.5'
+ARG NZBHYDRA2_ARCH='amd64'
 
 ### Environment variables
 ENV LANG='en_US.UTF-8' \
     LANGUAGE='en_US.UTF-8' \
     TERM='xterm'  \
-    NZBHYDRA2_VERSION="${NZBHYDRA2_VERSION}"
+    NZBHYDRA2_VERSION="${NZBHYDRA2_VERSION}" \
+    NZBHYDRA2_ARCH="${NZBHYDRA2_ARCH}"
 
 # Copy config files
 COPY root/ /
@@ -23,7 +25,7 @@ RUN set -x && \
       openjdk17-jre-headless \
       python3 \
     && \
-    curl -sL https://github.com/theotherp/nzbhydra2/releases/download/v${NZBHYDRA2_VERSION}/nzbhydra2-${NZBHYDRA2_VERSION}-linux.zip -o /tmp/nzbhydra2.zip && \
+    curl -sL https://github.com/theotherp/nzbhydra2/releases/download/v${NZBHYDRA2_VERSION}/nzbhydra2-${NZBHYDRA2_VERSION}-${NZBHYDRA2_ARCH}-linux.zip -o /tmp/nzbhydra2.zip && \
     cd /tmp && \
     unzip /tmp/nzbhydra2.zip -d /opt/nzbhydra2 && \
     apk del --no-cache --purge \
