@@ -1,7 +1,7 @@
 FROM digrouz/alpine-s6:latest
 LABEL maintainer "DI GREGORIO Nicolas <nicolas.digregorio@gmail.com>"
 
-ARG NZBHYDRA2_VERSION='5.3.5'
+ARG NZBHYDRA2_VERSION='5.3.7'
 ARG NZBHYDRA2_ARCH='generic'
 
 ### Environment variables
