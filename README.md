@@ -16,7 +16,7 @@ Several tag are available:
 
 ## Description
 
-NZBHydra 2 is a meta search for newznab indexers and torznab trackers. It provides easy access to newznab indexers and many torznab trackers via Jackett. You can search all your indexers and trackers from one place and use it as an indexer source for tools like Sonarr, Radarr, Lidarr or CouchPotato.
+NZBHydra 2 is a meta search for newznab indexers and torznab trackers. It provides easy access to newznab indexers and many torznab trackers via Jackett. You can search all your indexers and trackers from one place and use it as an indexer source for tools like Sonarr, Radarr, nzhbydra2 or CouchPotato.
 
 https://github.com/theotherp/nzbhydra2
 
@@ -53,6 +53,7 @@ This variable is not mandatory and specifies the timezone to be configured withi
 
 * This container is built using [s6-overlay](https://github.com/just-containers/s6-overlay)
 * The docker entrypoint can upgrade operating system at each startup. To enable this feature, just add `-e AUTOUPGRADE=1` at container creation.
+* An helm chart is available of in the [chart folder](https://github.com/digrouz/docker-nzhbydra2/tree/master/chart) with an example [values.yaml](https://github.com/digrouz/docker-nzhbydra2/tree/master/chart/values.yaml)
 
 ## Issues
 

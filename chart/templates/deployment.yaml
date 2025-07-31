@@ -1,0 +1,63 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-nzhbydra2
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app.kubernetes.io/component: nzhbydra2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/component: nzhbydra2
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/component: nzhbydra2
+    spec:
+      containers:
+        - name: nzhbydra2
+          image: {{ .Values.image.registry }}/{{ .Values.image.repository }}:{{ .Values.image.tag }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: 5076
+          volumeMounts:
+            - mountPath: /config
+              name: nzhbydra2-config
+            - mountPath: /downloads
+              name: nzhbydra2-downloads
+            - mountPath: /music
+              name: nzhbydra2-music
+          env:
+            - name: GID
+              value: "{{ .Values.service.gid }}"
+            - name: UID
+              value: "{{ .Values.service.uid }}"
+            - name: TZ
+              value: "{{ .Values.service.tz }}"
+            - name: AUTOUPGRADE
+              value: "{{ .Values.service.autoupgrade }}"
+      volumes:
+        - name: nzhbydra2-config
+          {{- if eq .Values.persistence.config.type "pvc" }}
+          persistentVolumeClaim:
+            claimName: {{ .Release.Name }}-config-pvc
+          {{- else if eq .Values.persistence.config.type "nfs" }}
+          nfs:
+            server: {{ .Values.persistence.config.nfs.server }}
+            path: {{ .Values.persistence.config.nfs.path }}
+          {{- else }}
+          emptyDir: { }
+          {{- end }}
+        - name: nzhbydra2-downloads
+          {{- if eq .Values.persistence.downloads.type "pvc" }}
+          persistentVolumeClaim:
+            claimName: {{ .Release.Name }}-downloads-pvc
+          {{- else if eq .Values.persistence.downloads.type "nfs" }}
+          nfs:
+            server: {{ .Values.persistence.downloads.nfs.server }}
+            path: {{ .Values.persistence.downloads.nfs.path }}
+          {{- else }}
+          emptyDir: { }
+          {{- end }}
