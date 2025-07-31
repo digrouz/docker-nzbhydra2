@@ -27,8 +27,6 @@ spec:
               name: nzhbydra2-config
             - mountPath: /downloads
               name: nzhbydra2-downloads
-            - mountPath: /music
-              name: nzhbydra2-music
           env:
             - name: GID
               value: "{{ .Values.service.gid }}"
