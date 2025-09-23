@@ -1,5 +1,5 @@
 FROM digrouz/alpine-s6:latest
-LABEL maintainer "DI GREGORIO Nicolas <nicolas.digregorio@gmail.com>"
+LABEL maintainer="DI GREGORIO Nicolas <nicolas.digregorio@gmail.com>"
 
 ARG NZBHYDRA2_VERSION='7.19.1'
 ARG NZBHYDRA2_ARCH='generic'
