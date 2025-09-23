@@ -1,15 +1,17 @@
+# docker-nzbhydra2
 
 [![auto-update](https://github.com/digrouz/docker-nzbhydra2/actions/workflows/auto-update.yml/badge.svg)](https://github.com/digrouz/docker-nzbhydra2/actions/workflows/auto-update.yml)
 [![dockerhub](https://github.com/digrouz/docker-nzbhydra2/actions/workflows/dockerhub.yml/badge.svg)](https://github.com/digrouz/docker-nzbhydra2/actions/workflows/dockerhub.yml)
 ![Docker Pulls](https://img.shields.io/docker/pulls/digrouz/nzbhydra2)
 
-# docker-nzbhydra2
 Installs nzbhydra into a Linux container
 
 ![nzbhydra2](https://github.com/theotherp/nzbhydra2/raw/master/core/ui-src/img/banner-bright.png)
 
 ## Tag
+
 Several tag are available:
+
 * latest: see alpine
 * alpine: [Dockerfile_alpine](https://github.com/digrouz/docker-nzbhydra2/blob/master/Dockerfile_alpine)
 * any version specific tag is based on alpine.
@@ -18,9 +20,10 @@ Several tag are available:
 
 NZBHydra 2 is a meta search for newznab indexers and torznab trackers. It provides easy access to newznab indexers and many torznab trackers via Jackett. You can search all your indexers and trackers from one place and use it as an indexer source for tools like Sonarr, Radarr, nzhbydra2 or CouchPotato.
 
-https://github.com/theotherp/nzbhydra2
+[https://github.com/theotherp/nzbhydra2](https://github.com/theotherp/nzbhydra2)
 
 ## Usage
+
     docker create --name=nzbhydra2  \
       -v <path to config>:/config \
       -e UID=<UID default:12345> \
